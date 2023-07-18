@@ -102,7 +102,7 @@ popd >/dev/null
 . $(dirname $0)/clean_env.sh
 if [ $RTOS != "host" ]; then
     pushd $FW_TARGETDIR/$DEV_WS_DIR >/dev/null
-        colcon build
+        colcon build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
         set +o nounset
         # source dev workspace
         . install/setup.bash

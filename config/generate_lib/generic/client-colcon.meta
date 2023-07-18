@@ -2,17 +2,20 @@
     "names": {
         "tracetools": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DTRACETOOLS_DISABLED=ON",
                 "-DTRACETOOLS_STATUS_CHECKING_TOOL=OFF"
             ]
         },
         "rosidl_typesupport": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DROSIDL_TYPESUPPORT_SINGLE_TYPESUPPORT=ON"
             ]
         },
         "rcl": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DBUILD_TESTING=OFF",
                 "-DRCL_COMMAND_LINE_ENABLED=OFF",
                 "-DRCL_LOGGING_ENABLED=OFF"
@@ -20,6 +23,7 @@
         }, 
         "rcutils": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DENABLE_TESTING=OFF",
                 "-DRCUTILS_NO_FILESYSTEM=ON",
                 "-DRCUTILS_NO_THREAD_SUPPORT=ON",
@@ -28,11 +32,13 @@
         },
         "microxrcedds_client": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DUCLIENT_PIC=OFF"
             ]
         },
         "rmw_microxrcedds": {
             "cmake-args": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DRMW_UXRCE_MAX_NODES=1",
                 "-DRMW_UXRCE_MAX_PUBLISHERS=1",
                 "-DRMW_UXRCE_MAX_SUBSCRIPTIONS=1",
