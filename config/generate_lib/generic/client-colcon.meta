@@ -2,9 +2,7 @@
     "names": {
         "tracetools": {
             "cmake-args": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DTRACETOOLS_DISABLED=ON",
-                "-DTRACETOOLS_STATUS_CHECKING_TOOL=OFF"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ]
         },
         "rosidl_typesupport": {
@@ -16,18 +14,13 @@
         "rcl": {
             "cmake-args": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DBUILD_TESTING=OFF",
-                "-DRCL_COMMAND_LINE_ENABLED=OFF",
-                "-DRCL_LOGGING_ENABLED=OFF"
+                "-DBUILD_TESTING=OFF"
             ]
         }, 
         "rcutils": {
             "cmake-args": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DENABLE_TESTING=OFF",
-                "-DRCUTILS_NO_FILESYSTEM=ON",
-                "-DRCUTILS_NO_THREAD_SUPPORT=ON",
-                "-DRCUTILS_AVOID_DYNAMIC_ALLOCATION=ON"
+                "-DENABLE_TESTING=OFF"
             ]
         },
         "microxrcedds_client": {
@@ -39,12 +32,16 @@
         "rmw_microxrcedds": {
             "cmake-args": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DRMW_UXRCE_MAX_NODES=1",
-                "-DRMW_UXRCE_MAX_PUBLISHERS=1",
-                "-DRMW_UXRCE_MAX_SUBSCRIPTIONS=1",
-                "-DRMW_UXRCE_MAX_SERVICES=1",
-                "-DRMW_UXRCE_MAX_CLIENTS=1",
-                "-DRMW_UXRCE_MAX_HISTORY=4"
+                "-DRMW_UXRCE_TRANSPORT=udp",
+                "-DRMW_UXRCE_DEFAULT_UDP_IP=127.0.0.1",
+                "-DRMW_UXRCE_DEFAULT_UDP_PORT=2019",
+                "-DRMW_UXRCE_MAX_NODES=15",
+                "-DRMW_UXRCE_MAX_PUBLISHERS=15",
+                "-DRMW_UXRCE_MAX_SUBSCRIPTIONS=15",
+                "-DRMW_UXRCE_MAX_SERVICES=15",
+                "-DRMW_UXRCE_MAX_CLIENTS=15",
+                "-DRMW_UXRCE_STREAM_HISTORY=32",
+                "-DRMW_UXRCE_MAX_HISTORY=10"
             ]
         }
     }
