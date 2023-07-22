@@ -32,7 +32,7 @@
         "rmw_microxrcedds": {
             "cmake-args": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DRMW_UXRCE_TRANSPORT=udp",
+                "-DRMW_UXRCE_TRANSPORT=custom",
                 "-DRMW_UXRCE_DEFAULT_UDP_IP=127.0.0.1",
                 "-DRMW_UXRCE_DEFAULT_UDP_PORT=2019",
                 "-DRMW_UXRCE_MAX_NODES=15",
