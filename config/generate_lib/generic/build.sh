@@ -16,6 +16,8 @@ else
     echo "Using default meta: $COLCON_META"
 fi
 
+ARCHIVE_COMMAND=/usr/local/opt/gcc-arm-none-eabi/arm-none-eabi/bin/ar
+RANLIB_COMMAND=/usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib
 
 BUILD_DIR=$FW_TARGETDIR/build
 
@@ -37,19 +39,6 @@ pushd $FW_TARGETDIR/mcu_ws >/dev/null
     -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN \
     -DCMAKE_VERBOSE_MAKEFILE=ON; \
 
-    # mkdir -p $FW_TARGETDIR/libmicroros; cd $FW_TARGETDIR/libmicroros; \
-    # for file in $(find $FW_TARGETDIR/mcu_ws/install/lib/ -name '*.a'); do \
-    #     folder=$(echo $file | sed -E "s/(.+)\/(.+).a/\2/"); \
-    #     mkdir -p $folder; cd $folder; ar x $file; \
-    #     for f in *; do \
-    #         mv $f ../$folder-$f; \
-    #     done; \
-    #     cd ..; rm -rf $folder; \
-    # done ; \
-    # ar rc libmicroros.a $(ls *.o *.obj 2> /dev/null); mkdir -p $BUILD_DIR; cp libmicroros.a $BUILD_DIR; ranlib $BUILD_DIR/libmicroros.a; \
-    # cp -R $FW_TARGETDIR/mcu_ws/install/include $BUILD_DIR/; \
-    # cd ..; rm -rf libmicroros;
-
     mkdir -p $FW_TARGETDIR/libmicroros
     cd $FW_TARGETDIR/libmicroros
     for file in $(find $FW_TARGETDIR/mcu_ws/install/lib -name '*.a'); do
@@ -58,19 +47,20 @@ pushd $FW_TARGETDIR/mcu_ws >/dev/null
         echo folder=$folder
         mkdir -p $folder
         cd $folder
-        ar x $file
-        for f in *.o; do
+        $ARCHIVE_COMMAND x $file
+        for f in *.obj; do
             mv "$f" ../$folder-$f;
         done ;
         cd ..
         rm -rf $folder;
     done ;
-    ar rc libmicroros.a $(ls *.o *.obj 2> /dev/null)
+    $ARCHIVE_COMMAND rc libmicroros.a $(ls *.o *.obj 2> /dev/null)
     rm -f *.o *.obj
     mkdir -p $BUILD_DIR
     cp libmicroros.a $BUILD_DIR
-    ranlib $BUILD_DIR/libmicroros.a
+    $RANLIB_COMMAND $BUILD_DIR/libmicroros.a
     cp -R $FW_TARGETDIR/mcu_ws/install/include $BUILD_DIR
     cd ..
     rm -rf libmicroros
+
 popd >/dev/null
