@@ -24,4 +24,14 @@ pushd $FW_TARGETDIR >/dev/null
     touch mcu_ws/ros2/geometry2/tf2_sensor_msgs/COLCON_IGNORE
     touch mcu_ws/ros2/geometry2/tf2_tools/COLCON_IGNORE
 
+    # ignore everything but ardupilot_msgs in ardupilot
+    touch mcu_ws/ros2/ardupilot/libraries/COLCON_IGNORE
+    touch mcu_ws/ros2/ardupilot/modules/COLCON_IGNORE
+    touch mcu_ws/ros2/ardupilot/Tools/ros2/ardupilot_dds_tests/COLCON_IGNORE
+    touch mcu_ws/ros2/ardupilot/Tools/ros2/ardupilot_sitl/COLCON_IGNORE
+
+    # ignore everything but geographic_msgs in geographic_info
+    touch mcu_ws/ros2/geographic_info/geodesy/COLCON_IGNORE
+    touch mcu_ws/ros2/geographic_info/geographic_info/COLCON_IGNORE
+
 popd >/dev/null

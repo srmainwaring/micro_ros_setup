@@ -47,11 +47,6 @@ repositories:
     url: https://github.com/ros2/example_interfaces
     version: humble
 
-  ros2/geometry2:
-    type: git
-    url: https://github.com/ros2/geometry2
-    version: humble
-
   ros2/rcl_interfaces:
     type: git
     url: https://github.com/ros2/rcl_interfaces
@@ -61,3 +56,18 @@ repositories:
     type: git
     url: https://github.com/ros2/unique_identifier_msgs
     version: humble
+
+  ros2/geometry2:
+    type: git
+    url: https://github.com/ros2/geometry2
+    version: humble
+
+  ros2/ardupilot:
+    type: git
+    url: https://github.com/ArduPilot/ardupilot.git
+    version: master
+
+  ros2/geographic_info:
+    type: git
+    url: https://github.com/ros-geographic-info/geographic_info
+    version: ros2
