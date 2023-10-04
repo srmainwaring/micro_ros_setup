@@ -16,8 +16,15 @@ else
     echo "Using default meta: $COLCON_META"
 fi
 
-ARCHIVE_COMMAND=/usr/local/opt/gcc-arm-none-eabi/arm-none-eabi/bin/ar
-RANLIB_COMMAND=/usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib
+# macOS Intel
+# ARCHIVE_COMMAND=/usr/local/opt/gcc-arm-none-eabi/arm-none-eabi/bin/ar
+# RANLIB_COMMAND=/usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib
+# macOS M1
+ARCHIVE_COMMAND=/opt/homebrew/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-ar
+RANLIB_COMMAND=/opt/homebrew/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-ranlib
+# macOS Native
+# ARCHIVE_COMMAND=/usr/bin/ar
+# RANLIB_COMMAND=/usr/bin/ranlib
 
 BUILD_DIR=$FW_TARGETDIR/build
 
