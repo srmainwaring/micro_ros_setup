@@ -3,8 +3,12 @@ set(CMAKE_CROSSCOMPILING 1)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 # set path to c99 and c++ compilers
-set(CMAKE_C_COMPILER /usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc)
-set(CMAKE_CXX_COMPILER /usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-g++)
+# macOS Intel
+# set(CMAKE_C_COMPILER /usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc)
+# set(CMAKE_CXX_COMPILER /usr/local/opt/gcc-arm-none-eabi/bin/arm-none-eabi-g++)
+# macOS M1
+set(CMAKE_C_COMPILER /opt/homebrew/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER /opt/homebrew/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-g++)
 
 # suppress compiler checks
 set(CMAKE_C_COMPILER_WORKS 1 CACHE INTERNAL "")
